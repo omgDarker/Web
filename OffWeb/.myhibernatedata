@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Wed May 20 16:05:41 HKT 2015
+genBasicCompId=true
+sessionFactoryName=cn.wegoteam.shop.dao.HibernateSessionFactory
+profile=
+daoSFId=
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=true
+reSettingsFile=
+configFile=/ZQShop/src/hibernate.cfg.xml
+createConfigFile=false

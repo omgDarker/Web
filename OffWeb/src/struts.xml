@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <constant name="struts.action.extension" value=",action,do" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.multipart.maxSize" value="10485760" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="default" namespace="/" extends="struts-default">
+	   <global-results>
+	        <result name="success">/WEB-INF/web/success.jsp</result>
+	        <result name="error">/WEB-INF/web/error.jsp</result>
+	        <result name="exception" type="chain">exception</result>
+	   </global-results>
+	   <!-- 配置异常处理action -->
+	    <global-exception-mappings>
+           <exception-mapping exception="java.sql.SQLException" result="exception"/>
+           <exception-mapping exception="java.lang.Exception" result="exception"/>
+     	</global-exception-mappings>
+	 </package>
+	<package name="manage" namespace="/" extends="default">
+		<!--管理员 -->
+		<interceptors>
+		        <interceptor name="admininter" class="cn.wegoteam.shop.util.AdminInteceptor"></interceptor>	
+				<interceptor-stack name="admininterstack">
+					<interceptor-ref name="defaultStack"></interceptor-ref>
+					<interceptor-ref name="admininter"></interceptor-ref>
+				</interceptor-stack> 
+		</interceptors>
+		 <!-- 配置默认拦截器栈-->
+		 <default-interceptor-ref name="admininterstack"/>
+	     <global-results>
+			<result name="login" type="chain">preLogin</result>
+			<result name="optresult_success">/WEB-INF/manage/operationresult_success.jsp</result>
+			<result name="optresult_error">/WEB-INF/manage/operationresult_error.jsp</result>
+		</global-results>
+		<!-- 上传图片 -->
+		<action name="fileUpload" class="cn.wegoteam.shop.action.FileUploadAction"></action>
+	</package>
+	<package name="users" namespace="/" extends="default">
+		<!--用户 -->
+		<interceptors>
+		        <interceptor name="userinter" class="cn.wegoteam.shop.util.UserInteceptor"></interceptor>	
+				<interceptor-stack name="userinterstack">
+					<interceptor-ref name="defaultStack"></interceptor-ref>
+					<interceptor-ref name="userinter"></interceptor-ref>
+				</interceptor-stack> 
+		</interceptors>
+		 <!-- 配置默认拦截器栈-->
+		 <default-interceptor-ref name="userinterstack"/>
+		 <global-results>
+			<result name="login" type="chain">preLogin</result>
+		</global-results>
+	</package>
+</struts>

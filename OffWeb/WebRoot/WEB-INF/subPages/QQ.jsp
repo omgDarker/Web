@@ -1,0 +1,3 @@
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<a target="_blank" href="http://wpa.qq.com/msgrd?V=1&amp;uin=2731692894&amp;Site=在线咨询&amp;Menu=no&amp;title=在线客服"><img border="0" src="http://wpa.qq.com/pa?p=1:2731692894:4" align="absmiddle"> 客服1</a>
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2731692894&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2731692894:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>		

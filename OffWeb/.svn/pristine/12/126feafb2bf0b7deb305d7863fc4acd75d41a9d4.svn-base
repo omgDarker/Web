@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/******清除max-width:100%设置，否则无法放大图片***********/
+.spec-preview img{max-width:none;}
+/*图片小图预览列表*/
+.spec-preview{width:100%;border:1px solid #DFDFDF;max-height:400px;overflow:hidden;vertical-align: middle;}
+
+/*图片放大镜样式*/
+.jqzoom{float:left;border:none;position:relative;width:100%;max-height:400px;padding:0px;cursor:pointer;
+margin:0px;display:block;overflow:hidden;text-align: center;vertical-align: middle;}
+.zoomdiv{z-index:100;position:absolute;top:0px;left:0px;width:400px;height:400px;background:#ffffff;border:1px solid #CCCCCC;display:none;text-align:center;overflow:hidden;}
+.jqZoomPup{z-index:10;visibility:hidden;position:absolute;top:0px;left:0px;width:20px;height:20px;
+background:url(../images/zoom.png);opacity: 0.5;-moz-opacity: 0.5;-khtml-opacity: 0.5;filter: alpha(Opacity=50);}
+.jqzoom img{
+	max-width:100%;
+}
+
+.spec-scroll{clear:both;width:100%;height:70px; border-bottom:1px dotted #EEEEEE;}
+.spec-scroll .prev{float:left;margin-right:4px;}
+.spec-scroll .next{float:right;}
+.spec-scroll .prev,.spec-scroll .next{display:block;font-family:"宋体";text-align:center;width:15px;height:70px; line-height:70px;border:1px solid #DDDDDD;border-top:0px; border-bottom:0px; background:#EBEBEB;cursor:pointer;text-decoration:none;}
+.spec-scroll .items{position:relative;margin-left:20px;margin-right:20px;height:66px;overflow:hidden;}
+.spec-scroll .items ul{position:absolute;width:999999px;height:56px;}
+.spec-scroll .items ul li{float:left;width:70px;text-align:center;padding-top:5px;}
+.spec-scroll .items ul li img{padding:2px;width:60px;height:60px;}
+.spec-scroll .items ul li img:hover{border:2px solid #FF6600;padding:0px;}
